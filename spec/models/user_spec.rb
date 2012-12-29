@@ -32,6 +32,16 @@ describe User do
 		it { should_not be_valid }
 	end
 
+	describe "when password is not complex enough" do
+		it "should be invalid" do
+			passwords = %w[abcdef 123456 ABCDEF abcDEF abc123 ABC123]
+			passwords.each do |invalid_password|
+				@user.password = invalid_password
+				@user.should_not be_valid
+			end
+		end
+	end
+
 	describe "when email format is invalid" do
 		it "should be invalid" do
 			addresses = %w[user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com]
