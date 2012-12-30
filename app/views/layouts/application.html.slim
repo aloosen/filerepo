@@ -1,19 +1,29 @@
 doctype html
-html
-	head
-		title = t(:title)
-    	= stylesheet_link_tag    "application", :media => "all"
-    	= javascript_include_tag "application"
-    	= csrf_meta_tags
-    	/[if lt IE 9]
-      		script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
-    body
-    	header class='navbar navbar-fixed-top navbar-inverse'
-    		div class='navbar-inner'
-    			div class='container'
-    				= link_to t(:title), "#"
-	    			nav
-  	 	 				ul class='nav pull-right'
-   		 					li = link_to "Login", '#'
-    	div class='container'
-    		= yield
+html lang="#{I18n.locale}"
+  head
+    title = yield(:title)
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    /[if lt IE 9]
+      script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
+  body
+    div class='container'
+      div class='navbar navbar-fixed-top navbar-inverse'
+        div class='navbar-inner'
+          = link_to yield(:title), "#", class: 'brand', id: 'logo'
+          - if signed_in?
+            ul class='nav pull-right'
+              li = link_to "(#{current_user.name}) Logout", logout_path
+            ul class='nav'
+              li = link_to t(:usermgmt)
+              li = link_to t(:filemgmt)
+          - else
+            ul class='nav pull-right'
+              li = link_to t(:login), login_path
+    - flash.each do |key, value|
+      div class="alert alert-#{key} center"
+        = value
+    div class='container'
+      = yield
+      = debug(params) if Rails.env.development?

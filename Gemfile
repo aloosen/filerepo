@@ -16,6 +16,9 @@ gem 'http_accept_language'
 gem 'cocoon'
 gem 'slim'
 gem 'bcrypt-ruby'
+gem 'thin'
+gem 'launchy'
+gem 'factory_girl_rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

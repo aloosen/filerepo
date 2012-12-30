@@ -1,9 +1,13 @@
 Filerepo::Application.routes.draw do
   # get "static_pages/index"
-  scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}|de/ do
+  scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do
     root to: 'static_pages#index'
-    resources :static_pages
+    resources :static_pages, only: [:index]
+    resources :sessions, only: [:new, :create, :destroy]
+    match '/login', to: 'sessions#new'
+    match '/logout', to: 'sessions#destroy'
   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

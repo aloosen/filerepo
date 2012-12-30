@@ -1,8 +1,19 @@
 de:
-  hello: Hallo Welt
   title: Aktenarchiv
+  login: Anmelden
+  user: Benutzername
+  password: Kennwort
+  invaliduser: Falscher Benutzername oder falsches Kennwort
+  usermgmt: Benutzerverwaltung
+  dashboard: Übersicht
+
 en:
-  hello: Hello World
+  title: File repository
+  login: login
+  user: user name
+  password: password
+  invaliduser: Invalid user name or password
+  usermgmt: users
   date:
     abbr_day_names:
     - Sun

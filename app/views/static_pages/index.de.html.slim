@@ -1,3 +1,35 @@
-div class='center hero-unit'
-	h3 Herzlich Willkommen beim Archivsystem
-	p Diese Anwendung ermöglcht die Verwaltung Ihres Aktenarchives. Bitte melden Sie sich an.
+- provide(:title, t(:dashboard))
+div class='container'
+  div class='row-fluid'
+    div class='span3'
+      div class='dashboard-item'
+        p class='dashboard-heading center' Angemeldete Benutzer
+        ul class='dashboard-list'
+          li Andreas Loosen
+          li Klaus Retter
+          li Andreas Storf
+      div class='dashboard-item'
+        p class='dashboard-heading center' Lagerstatus
+        ul class='dashboard-list'
+          li 50m belegt
+          li 120m frei
+          li 60m zusammenhängend
+      div class='dashboard-item'
+        p class='dashboard-heading center' Lagerbelegung
+        ul class='dashboard-list'
+          li 50% LVM Versicherungen
+          li 20% WGV Versicherungen
+          li 15% Paul v. Maur
+    div class='span3'
+      div class='dashboard-item'
+        p class='dashboard-heading center' Aktenstatus
+        ul class='dashboard-list'
+          li 2753 Akten eingelagert
+          li 20 Akten ausgeliehen
+          li 120 Akten zu vernichten
+          li 40 Akten neu eingelagert
+      div class='dashboard-item'
+        p class='dashboard-heading center' Umsatz
+        ul class='dashboard-list'
+          li 34,34€ LVM Versicherungen
+          li 12,22€ WGV Versicherungen
