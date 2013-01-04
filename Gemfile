@@ -19,6 +19,8 @@ gem 'bcrypt-ruby'
 gem 'thin'
 gem 'launchy'
 gem 'factory_girl_rails'
+gem 'best_in_place'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

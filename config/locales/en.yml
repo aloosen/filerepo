@@ -1,10 +1,34 @@
 de:
+  role_global_admin: Globaler Administrator
+  role_customer_admin: Kundenadministrator
+  user:
+    userlist: Benutzerliste
+    new_user: Neuer Benutzer
+    new_customer: Neuer Kunde
+    login_name: Anmeldename
+    email: E-Mail
+    role: Rolle
+    create_user: Benutzer anlegen
+    create_customer: Kunden anlegen
+    name: Anmeldename
+    password: Kennwort
+    fullname: Voller Name
+    password_digest: Kennwort
+    customer: Kunde
+    edit_user: Benutzer bearbeiten
+    are_you_sure: Sind Sie sicher?
+    save_changes: Änderungen speichern
+  customer:
+    name: Name
+    are_you_sure: Sind Sie sicher, dass Sie den Kunden löschen wollen?
+  test:
+    loginname: Blablabla
   title: Aktenarchiv
   login: Anmelden
-  user: Benutzername
+  #user: Benutzername
   password: Kennwort
   invaliduser: Falscher Benutzername oder falsches Kennwort
-  usermgmt: Benutzerverwaltung
+  usermgmt: Benutzer
   dashboard: Übersicht
 
 en:

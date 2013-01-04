@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require bootstrap-dropdown.js
+//= require bootstrap-collapse.js
+//= require bootstrap-transition.js
+//= require bootstrap-modal.js
+//= require best_in_place.js
+

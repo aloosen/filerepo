@@ -1,9 +1,16 @@
 Filerepo::Application.routes.draw do
+
+
   # get "static_pages/index"
   scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do
     root to: 'static_pages#index'
     resources :static_pages, only: [:index]
     resources :sessions, only: [:new, :create, :destroy]
+    resources :users do
+      get 'refresh', on: :collection
+    end
+    resources :customers
+    #, only: [:index, :new]
     match '/login', to: 'sessions#new'
     match '/logout', to: 'sessions#destroy'
   end

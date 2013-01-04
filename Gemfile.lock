@@ -31,6 +31,9 @@ GEM
     addressable (2.3.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    best_in_place (2.0.2)
+      jquery-rails
+      rails (~> 3.1)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
@@ -166,6 +169,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
+  best_in_place
   bootstrap-sass
   bootstrap-will_paginate
   capybara

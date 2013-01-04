@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :fullname, :name, :password, :customer_id
+  attr_accessible :email, :fullname, :name, :password, :customer_id, :role_id
   has_secure_password
   belongs_to :customer
+  belongs_to :role
 
   before_save { |user| user.name = user.name.downcase }
 
@@ -10,5 +11,6 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 16 }, uniqueness: { case_sensitive: false }
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
   validates :fullname, presence: true
-  validates :password, presence: true, format: { with: VALID_PASSWORD}, length: { minimum: 6 }
+  validates_associated :customer
+  # validates :password, presence: true, format: { with: VALID_PASSWORD}, length: { minimum: 6 }
 end
