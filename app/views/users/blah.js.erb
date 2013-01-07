@@ -1,0 +1,5 @@
+$('#userModal').html('<%= escape_javascript(render "form") %>')
+$('#userModalLabel').html('<%= escape_javascript(t(:create_user)) %>');
+//$('#user_submit').val('<%= escape_javascript(t(:create_user)) %>');
+$('#user_submit').val('<%= escape_javascript(params[:action]) %>');
+$('#userModal').modal('show');

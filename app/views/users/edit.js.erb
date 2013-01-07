@@ -1,0 +1,4 @@
+$('#userModal').html('<%= escape_javascript(render "form") %>');
+$('#userModalLabel').html('<%= escape_javascript(t(:'user.edit_user')) %>');
+$('#user_submit').val('<%= escape_javascript(t(:'user.save_changes')) %>');
+$('#userModal').modal('show');

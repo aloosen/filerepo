@@ -1,0 +1,33 @@
+= form_for(@user, remote: true, html: { class: 'form-horizontal'} ) do |f|
+  div class='modal-header'
+    button type='button' class='close' data-dismiss='modal' aria-hidden='true' &times;
+    h3 id='userModalLabel' = t(:'user.create_user')
+  div class='modal-body'
+      div class='errors'
+      div class='control-group'
+        = f.label :name, t(:'user.name'), class: 'control-label'
+        div class='controls'
+          = f.text_field :name
+      div class='control-group'
+        = f.label :fullname, t(:'user.fullname'), class: 'control-label'
+        div class='controls'
+          = f.text_field :fullname
+      div class='control-group'
+        = f.label :email, t(:'user.email'), class: 'control-label'
+        div class='controls'
+          = f.text_field :email
+      div class='control-group'
+        = f.label :password, t(:'user.password'), class: 'control-label'
+        div class='controls'
+          = f.text_field :password
+      div class='control-group'
+        = f.label :customer_id, t(:'user.customer'), class: 'control-label'
+        div class='controls'
+          = f.select :customer_id, @customers.collect { |c| [ c.name, c.id ] }
+      div class='control-group'
+        = f.label :role_id, t(:'user.role'), class: 'control-label'
+        div class='controls'
+          = f.select :role_id, @roles.collect { |r| [ t(r.name), r.id ] }          
+  div class='modal-footer'
+    /button class='btn' data-dismiss='modal' aria-hidden='true' = t(:close_button)
+    = f.submit t(:'user.create_user'), id: 'user_submit', class: 'btn btn-primary'

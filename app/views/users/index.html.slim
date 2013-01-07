@@ -1,0 +1,17 @@
+- provide(:title, :userlist)
+div id='userModal' class='modal hide fade' tabindex='-1' role='dialog' aria-labelledby='userModalLabel' aria-hidden='true'
+  // = render 'form'
+//a href='#newUser' role='button' class='btn' data-toggle='modal' New User
+div class='row-fluid'
+  div class='span12'
+    div style='margin-bottom: 10px; border: 0px solid #e3e3e3;' class='row-fluid'
+      input type='text' class='search-query span2 pull-right' placeholder='Search'
+      div class='btn-group pull-left'
+        = link_to t(:'user.new_user'), new_user_path, remote: true, class: 'btn' 
+        = link_to t(:'user.new_customer'), new_customer_path, remote: true, class: 'btn' 
+      //div style='font-size: 1.7em; font-weight: bold; float: middle; text-align: center; margin-top: 4px;' = t(:userlist)
+//= link_to new_user_path, remote: true, class: 'btn btn-small' do
+//  i class='icon-user'
+
+div class='userlist'
+  = render 'users_by_customers'

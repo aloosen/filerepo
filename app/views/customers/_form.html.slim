@@ -1,0 +1,13 @@
+= form_for(@customer, remote: true, html: { class: 'form-horizontal'} ) do |f|
+  div class='modal-header'
+    button type='button' class='close' data-dismiss='modal' aria-hidden='true' &times;
+    h3 id='userModalLabel' xxx
+  div class='modal-body'
+      div class='errors'
+      div class='control-group'
+        = f.label :name, t(:'customer.name'), class: 'control-label'
+        div class='controls'
+          = f.text_field :name
+  div class='modal-footer'
+    /button class='btn' data-dismiss='modal' aria-hidden='true' = t(:close_button)
+    = f.submit 'xxx', id: 'user_submit', class: 'btn btn-primary'

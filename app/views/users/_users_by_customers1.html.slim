@@ -1,0 +1,33 @@
+div class='accordion' id='accordion'
+  - @customer_users.each do |customer, users|
+    div class='accordion-group'
+      div class='accordion-heading'
+        a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='#collapse<% customer.id %>'
+          = customer.name
+        = link_to customer, method: :delete, remote: true, confirm: t(:'customer.are_you_sure'), class: 'btn btn-small pull-right' do
+          i class='icon-remove'
+        = link_to edit_customer_path(customer), remote: true, class: 'btn btn-small pull-right' do
+          i class='icon-edit'
+    div id='collapseOne' class='accordion-body collapse in'
+      div class='accordion-inner'
+        - while users.size > 0 do
+          div class='row'
+            - users.shift(2).each do |user|
+              div class='dashboard-item span6'
+                div class='dashboard-heading center'
+                  = user.fullname
+                  = link_to user, method: :delete, remote: true, confirm: t(:'user.are_you_sure'), class: 'btn btn-small pull-right' do
+                    i class='icon-remove'
+                  = link_to edit_user_path(user), remote: true, class: 'btn btn-small pull-right' do
+                    i class='icon-edit'
+                ul class='dashboard-list span3'
+                  li = t(:'user.login_name')
+                  li = t(:'user.email')
+                  li = t(:'user.role')
+                ul class='dashboard-list'
+                  li = user.name
+                  li = user.email
+                  li = t(user.role.name)
+
+
+

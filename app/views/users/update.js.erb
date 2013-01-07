@@ -1,0 +1,6 @@
+<% if @user.errors.any? %>
+	$('div.errors').html('<%= escape_javascript(render "error_messages") %>');
+<% else %>
+	$('div.userlist').html('<%= escape_javascript(render "users_by_customers") %>')
+	$('#userModal').modal('hide');
+<% end %>

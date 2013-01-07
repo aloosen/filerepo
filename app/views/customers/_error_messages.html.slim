@@ -1,0 +1,5 @@
+div class='alert alert-error'
+  ul
+    - @customer.errors.messages.each do |field,msgs|
+      - msgs.each do |msg|
+        li = "#{t(:"customer.#{field}")} #{msg}"
